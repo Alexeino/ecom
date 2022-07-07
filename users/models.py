@@ -38,6 +38,8 @@ class CustomUser(AbstractBaseUser):
     is_active = models.BooleanField(default = True)
     is_superuser = models.BooleanField(default = False)
 
+    session_token = models.CharField(max_length=10,default=0,null=True,blank=True)
+
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ['name','phone']
 
